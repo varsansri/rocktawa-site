@@ -803,9 +803,13 @@ first.parentNode.insertBefore(script, first);
 <style id="clone-no-fake-sale">
   .price__compare, .money-compare-price, .compare-price, s.price-item--regular,
   .sale-badge, .badge.sale-badge, .productView-badge .sale-badge,
-  [id*="__announcement-bar"] { display: none !important; }
+  [id*="__announcement-bar"],
+  .productView-soldProduct, .productView-ViewingProduct { display: none !important; }
   .price--on-sale .price-item--sale, .price-item--sale, .sticky-price .money-sale-price
     { color: inherit !important; }
+</style>
+<style id="clone-tidy">
+  .wa-chat-bubble { display: none !important; }
 </style>
 </head>
 
