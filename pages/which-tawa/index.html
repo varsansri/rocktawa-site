@@ -2428,8 +2428,15 @@ Not sure after that? <a href="/rocktawa-site/pages/size-guide">See every size</a
     var it = pick(), notes = [];
     if (ans.weight === 'light' && it.kg > 2.5) notes.push('It weighs ' + it.kg + ' kg. Nothing that fits your answers is under 2.5 kg; this is the closest match.');
     if (ans.budget !== 'any' && it.price > +ans.budget) notes.push('It is above your budget. Nothing that fits your answers costs less.');
-    var f = fit(it, ans.people);
-    if (f !== 3 && f !== 1) notes.push('This is the closest size we make for ' + {'1':'1 to 2','3':'3 to 4','5':'5 or more'}[ans.people] + ' people.');
+    var f = fit(it, ans.people), who = {'1':'1 to 2','3':'3 to 4','5':'5 or more'}[ans.people];
+    if (f !== 3 && f !== 1) {
+      // Is the right size made, but ruled out by the weight or budget answer? Then name it.
+      var right = D.items.filter(function(x){ return x.cook.indexOf(ans.cook) > -1 && fit(x, ans.people) === 3; })
+                         .sort(function(a, b){ return a.rank - b.rank; })[0];
+      notes.push(right
+        ? 'For ' + who + ' people the right size is the ' + right.name + ' (' + right.kg + ' kg, ' + money(right.price) + '). It is outside your weight or budget answer, so this is the closest one that fits.'
+        : 'This is the closest size we make for ' + who + ' people.');
+    }
     var facts = ['<li>' + esc(it.words) + '</li>', '<li>Size: ' + esc(it.size) + (it.litres ? ', holds ' + it.litres + ' L' : '') + '. Weight: ' + it.kg + ' kg.</li>'];
     if (it.rank <= 8) facts.push('<li>One of our 8 best sellers on rocktawa.com.</li>');
     facts.push('<li>Pre-seasoned and ready to cook. 1-year warranty.</li>');
