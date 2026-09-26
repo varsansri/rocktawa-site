@@ -869,13 +869,9 @@ first.parentNode.insertBefore(script, first);
 
 <style id="clone-shop-by-menu">.rt-shopby-menu .site-nav-link .text { text-transform: none !important; }@media (max-width: 1024px) { .rt-shopby-menu .site-nav-title .text { text-transform: none !important; } }</style>
 <style id="clone-no-fake-sale">
-  .price__compare, .money-compare-price, .compare-price, s.price-item--regular,
   .sale-badge, .badge.sale-badge, .productView-badge .sale-badge,
   [id*="__announcement-bar"],
-  .productView-soldProduct, .productView-ViewingProduct,
   .productView-moreItem.moreItem-productText { display: none !important; }   /* the red HAPPY10 bar under Buy it now */
-  .price--on-sale .price-item--sale, .price-item--sale, .sticky-price .money-sale-price
-    { color: inherit !important; }
 </style>
 <style id="clone-product-names">
   :root { --product-title-text-transform: none !important; }
@@ -890,48 +886,63 @@ first.parentNode.insertBefore(script, first);
   .rt-card-sizes { font-size: 13px; color: #6b6b6b; margin: 2px 0 4px; }
   a.rt-choose-size { display: block; text-align: center; text-decoration: none; }
 </style>
-<style id="clone-homepage-story">
-  .rt-hp-hero { background: #f6ede4; padding: 46px 0 40px; }
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Sacramento&display=swap" rel="stylesheet"><style id="clone-homepage-story">
+  .rt-hp, .rt-hp-reviews { --rt-m: #9e364c; --rt-head: Montserrat, Poppins, sans-serif; --rt-script: Sacramento, cursive; }
+  .rt-hp, .rt-hp *, .rt-hp-reviews, .rt-hp-reviews * { border-radius: 0 !important; }
+  .rt-hp-script { font-family: var(--rt-script) !important; font-weight: 400 !important; text-transform: none !important; letter-spacing: 0 !important; }
+  .rt-hp-hero { background: #f6ede4; padding: 50px 0 44px; }
   .rt-hp-hero-in { display: grid; grid-template-columns: 1.05fr 1fr; gap: 34px; align-items: center; }
-  .rt-hp-eyebrow { color: #9e364c; font-weight: 600; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 10px; }
-  .rt-hp-hero h1 { font-size: 46px; line-height: 1.08; margin: 0 0 14px; color: #232323; text-transform: none; font-weight: 700; }
+  .rt-hp-eyebrow { font-family: var(--rt-head); font-weight: 500; font-size: 15px; letter-spacing: .12em; text-transform: uppercase; color: #232323; margin: 0 0 6px; }
+  .rt-hp-hero h1 { margin: 0 0 16px; line-height: .95; text-transform: none; }
+  .rt-hp-display { display: block; font-family: var(--rt-head); font-weight: 900; font-size: 66px; letter-spacing: -.01em; text-transform: uppercase; color: var(--rt-m); }
+  .rt-hp-hero h1 .rt-hp-script { display: inline-block; font-size: 58px; color: #232323; margin: -6px 0 0 4px; }
   .rt-hp-sub { font-size: 16px; line-height: 1.6; color: #3c3c3c; margin: 0 0 14px; max-width: 520px; }
   .rt-hp-price { font-size: 18px; font-weight: 700; margin: 0 0 20px; }
   .rt-hp-btns { display: flex; flex-wrap: wrap; gap: 12px; }
-  .rt-hp-btn { display: inline-flex; align-items: center; height: 50px; padding: 0 26px; background: #9e364c; color: #fff !important; border-radius: 4px; font-weight: 700; text-decoration: none; }
-  .rt-hp-btn--ghost { background: transparent; color: #232323 !important; border: 1px solid #232323; }
+  .rt-hp-btn { display: inline-flex; align-items: center; height: 50px; padding: 0 28px; background: var(--rt-m); border: 1px solid var(--rt-m);
+    color: #fff !important; font-weight: 700; font-size: 14px; letter-spacing: .05em; text-transform: uppercase; text-decoration: none; transition: .2s; }
+  .rt-hp-btn:hover { background: #fff; color: var(--rt-m) !important; }
+  .rt-hp-btn--ghost { background: transparent; color: #232323 !important; border-color: #232323; }
+  .rt-hp-btn--ghost:hover { background: #232323; color: #fff !important; }
   .rt-hp-hero-img { display: block; position: relative; }
-  .rt-hp-hero-img::before { content: ""; position: absolute; inset: 6% 8%; border-radius: 50%; background: #9e364c; }
+  .rt-hp-hero-img::before { content: ""; position: absolute; inset: 6% 8%; border-radius: 50% !important; background: var(--rt-m); }
   .rt-hp-hero-img img { position: relative; width: 100%; height: auto; display: block; }
-  .rt-hp-h2 { font-size: 26px; margin: 0 0 18px; text-transform: none; font-weight: 700; text-align: center; }
-  .rt-hp-h3 { font-size: 15px; margin: 22px 0 10px; text-transform: none; font-weight: 600; text-align: center; }
+  .rt-hp-h2 { font-family: var(--rt-head); font-size: 30px; font-weight: 800; letter-spacing: .01em; margin: 0 0 20px; text-transform: uppercase; text-align: center; }
+  .rt-hp-h2 .rt-hp-script { font-size: 46px; color: var(--rt-m); margin-left: 4px; }
+  .rt-hp-h3 { font-family: var(--rt-head); font-size: 14px; margin: 24px 0 10px; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; text-align: center; }
   .rt-hp-shop, .rt-hp-why, .rt-hp-reviews { padding: 46px 0 10px; }
-  .rt-hp-material { display: grid; grid-template-columns: 300px 1fr; align-items: center; gap: 24px; border: 1px solid #ececec; border-radius: 10px; overflow: hidden; text-decoration: none; color: #232323; max-width: 860px; margin: 0 auto; background: #fff; }
+  .rt-hp-material { display: grid; grid-template-columns: 300px 1fr; align-items: center; gap: 24px; border: 1px solid #e6e6e6; overflow: hidden; text-decoration: none; color: #232323; max-width: 860px; margin: 0 auto; background: #fff; }
   .rt-hp-material img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
-  .rt-hp-material b { display: block; font-size: 24px; margin-bottom: 6px; }
-  .rt-hp-material i { display: block; font-style: normal; color: #6b6b6b; line-height: 1.5; margin-bottom: 12px; }
-  .rt-hp-material em { font-style: normal; font-weight: 700; color: #9e364c; }
+  .rt-hp-material b { display: block; font-family: var(--rt-head); font-weight: 900; font-size: 30px; text-transform: uppercase; color: var(--rt-m); margin-bottom: 6px; }
+  .rt-hp-material i { display: block; font-style: normal; color: #6b6b6b; line-height: 1.5; margin-bottom: 14px; }
+  .rt-hp-material em { font-style: normal; font-weight: 700; font-size: 13px; letter-spacing: .05em; text-transform: uppercase; color: #fff; background: var(--rt-m); padding: 10px 18px; display: inline-block; }
   .rt-hp-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-  .rt-hp-chips a { border: 1px solid #d9c3c9; background: #fbf4f6; color: #6b2536; border-radius: 22px; padding: 9px 16px; font-size: 14px; text-decoration: none; }
+  .rt-hp-chips a { border: 1px solid #232323; background: #fff; color: #232323; padding: 10px 18px; font-size: 13px; font-weight: 600; text-decoration: none; transition: .2s; }
+  .rt-hp-chips a:hover { background: #232323; color: #fff; }
   .rt-hp-why { background: #fafafa; padding-bottom: 40px; margin-top: 40px; }
   .rt-hp-why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-  .rt-hp-why-grid div { background: #fff; border-radius: 10px; padding: 20px; border: 1px solid #efefef; }
-  .rt-hp-why-grid span { display: inline-flex; width: 34px; height: 34px; border-radius: 50%; background: #9e364c; color: #fff; align-items: center; justify-content: center; font-weight: 700; }
-  .rt-hp-why-grid h3 { font-size: 17px; margin: 12px 0 6px; text-transform: none; }
+  .rt-hp-why-grid div { background: #fff; padding: 22px; border: 1px solid #ececec; border-top: 3px solid var(--rt-m); }
+  .rt-hp-why-grid span { font-family: var(--rt-head); font-weight: 900; font-size: 30px; color: var(--rt-m); line-height: 1; }
+  .rt-hp-why-grid h3 { font-family: var(--rt-head); font-size: 16px; font-weight: 800; margin: 10px 0 8px; text-transform: uppercase; letter-spacing: .02em; }
   .rt-hp-why-grid p { margin: 0; line-height: 1.55; color: #3c3c3c; font-size: 14px; }
-  .rt-hp-why-links { text-align: center; margin: 18px 0 0; }
-  .rt-hp-why-links a { color: #9e364c; font-weight: 600; margin: 0 12px; }
+  .rt-hp-why-links { text-align: center; margin: 20px 0 0; }
+  .rt-hp-why-links a { color: var(--rt-m); font-weight: 700; margin: 0 12px; text-transform: uppercase; font-size: 13px; letter-spacing: .05em; }
   .rt-hp-note { text-align: center; color: #6b6b6b; font-size: 13px; margin: -8px 0 18px; }
   .rt-hp-rev-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-  .rt-hp-rev { border: 1px solid #ececec; border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; background: #fff; }
+  .rt-hp-rev { border: 1px solid #ececec; padding: 18px; display: flex; flex-direction: column; background: #fff; }
   .rt-hp-rev .rt-star { color: #e7a33e; letter-spacing: 1px; } .rt-hp-rev .rt-star-off { color: #d9d9d9; }
-  .rt-hp-rev h3 { font-size: 15px; margin: 6px 0; text-transform: none; line-height: 1.35; }
+  .rt-hp-rev h3 { font-family: var(--rt-head); font-size: 15px; font-weight: 700; margin: 6px 0; text-transform: none; line-height: 1.35; }
   .rt-hp-rev-body { font-size: 14px; line-height: 1.55; color: #3c3c3c; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; margin: 0 0 8px; }
   .rt-hp-rev-by { font-size: 12px; color: #767676; margin: 0 0 10px; }
-  .rt-hp-rev a { margin-top: auto; font-size: 13px; color: #9e364c; font-weight: 600; }
-  @media (max-width: 989px) { .rt-hp-hero-in { grid-template-columns: 1fr; } .rt-hp-hero h1 { font-size: 34px; } .rt-hp-hero-img { max-width: 420px; margin: 0 auto; }
-    .rt-hp-why-grid, .rt-hp-rev-grid { grid-template-columns: 1fr 1fr; } .rt-hp-material { grid-template-columns: 1fr; } }
-  @media (max-width: 560px) { .rt-hp-why-grid, .rt-hp-rev-grid { grid-template-columns: 1fr; } .rt-hp-hero { padding-top: 28px; } .rt-hp-material b { font-size: 20px; } .rt-hp-material span { padding: 0 16px 18px; } }
+  .rt-hp-rev a { margin-top: auto; font-size: 13px; color: var(--rt-m); font-weight: 600; }
+  @media (max-width: 989px) { .rt-hp-hero-in { grid-template-columns: 1fr; } .rt-hp-display { font-size: 48px; } .rt-hp-hero h1 .rt-hp-script { font-size: 44px; }
+    .rt-hp-hero-img { max-width: 420px; margin: 0 auto; } .rt-hp-why-grid, .rt-hp-rev-grid { grid-template-columns: 1fr 1fr; } .rt-hp-material { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) { .rt-hp-why-grid, .rt-hp-rev-grid { grid-template-columns: 1fr; } .rt-hp-hero { padding-top: 30px; } .rt-hp-display { font-size: 42px; }
+    .rt-hp-h2 { font-size: 22px; } .rt-hp-h2 .rt-hp-script { font-size: 36px; } .rt-hp-material b { font-size: 24px; } .rt-hp-material span { padding: 0 16px 18px; } }
+</style>
+<style id="clone-sharp-corners">
+  [class^="rt-"], [class*=" rt-"], [class^="rt-"] *, [class*=" rt-"] * { border-radius: 0 !important; }
+  .rt-hp-hero-img::before { border-radius: 50% !important; }
 </style>
 <style id="clone-tidy">
   .wa-chat-bubble { display: none !important; }
@@ -1258,7 +1269,7 @@ first.parentNode.insertBefore(script, first);
                         <div class="price  price--on-sale ">
     <dl><div class="price__regular"><dd class="price__last"><span class="price-item price-item--regular">From Rs. 749.00</span></dd>
         </div>
-        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 2,050.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
+        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 1,800.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
         <small class="unit-price caption hidden">
             <dt class="visually-hidden">Unit price</dt>
             <dd class="price__last"><span></span><span aria-hidden="true">/</span><span class="visually-hidden">&nbsp;per&nbsp;</span><span></span></dd>
@@ -1529,7 +1540,7 @@ first.parentNode.insertBefore(script, first);
                         <div class="price  price--on-sale ">
     <dl><div class="price__regular"><dd class="price__last"><span class="price-item price-item--regular">From Rs. 749.00</span></dd>
         </div>
-        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 2,050.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
+        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 1,800.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
         <small class="unit-price caption hidden">
             <dt class="visually-hidden">Unit price</dt>
             <dd class="price__last"><span></span><span aria-hidden="true">/</span><span class="visually-hidden">&nbsp;per&nbsp;</span><span></span></dd>
@@ -1890,7 +1901,7 @@ first.parentNode.insertBefore(script, first);
 
 
 
-<li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a  href="/rocktawa-site/pages/track-order" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Track your order</span></a></li><li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a href="/rocktawa-site/pages/size-guide" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Size guide</span></a></li><li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a href="/rocktawa-site/pages/which-tawa" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Which tawa?</span></a></li><li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a href="/rocktawa-site/pages/care-assistant" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Care help</span></a></li><li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a href="/rocktawa-site/pages/build-a-set" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Build a set</span></a></li>
+<li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a  href="https://rocktawa.com/apps/track123" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Track your order</span></a></li><li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a href="/rocktawa-site/pages/size-guide" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Size guide</span></a></li><li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a href="/rocktawa-site/pages/which-tawa" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Which tawa?</span></a></li><li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a href="/rocktawa-site/pages/care-assistant" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Care help</span></a></li><li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a href="/rocktawa-site/pages/build-a-set" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Build a set</span></a></li>
 </ul>
 
                             </nav></div>
@@ -2060,7 +2071,7 @@ first.parentNode.insertBefore(script, first);
                         <div class="price  price--on-sale ">
     <dl><div class="price__regular"><dd class="price__last"><span class="price-item price-item--regular">From Rs. 749.00</span></dd>
         </div>
-        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 2,050.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
+        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 1,800.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
         <small class="unit-price caption hidden">
             <dt class="visually-hidden">Unit price</dt>
             <dd class="price__last"><span></span><span aria-hidden="true">/</span><span class="visually-hidden">&nbsp;per&nbsp;</span><span></span></dd>
@@ -2348,8 +2359,8 @@ first.parentNode.insertBefore(script, first);
                 <main id="MainContent" class="wrapper-body content-for-layout focus-none" role="main" tabindex="-1">
                     <div class="rt-hp"><section class="rt-hp-hero"><div class="container rt-hp-hero-in">
   <div class="rt-hp-hero-txt">
-    <p class="rt-hp-eyebrow">Pre-seasoned cast iron &middot; a best seller</p>
-    <h1>The dosa tawa</h1>
+    <p class="rt-hp-eyebrow">Crafted in cast iron &middot; a best seller</p>
+    <h1><span class="rt-hp-display">Dosa tawa</span> <span class="rt-hp-script">pre-seasoned</span></h1>
     <p class="rt-hp-sub">Thick cast iron, pre-seasoned with sunflower oil, with two loop handles. Five sizes from 9 inch to 14 inch.
     Crisp, even dosas, and it gets more non-stick every time you cook.</p>
     <p class="rt-hp-price">From Rs. 749 &middot; 1-year warranty</p>
@@ -2358,7 +2369,7 @@ first.parentNode.insertBefore(script, first);
   </div>
   <a class="rt-hp-hero-img" href="/rocktawa-site/products/rock-tawa-dosa-tawa-12-inch-pre-seasoned-cast-iron-skillet"><img src="/rocktawa-site/_assets/rt-home/dosa-tawa.webp" alt="Rock Tawa pre-seasoned cast-iron dosa tawa" width="700" height="572"></a>
 </div></section><section class="rt-hp-shop"><div class="container">
-  <h2 class="rt-hp-h2">Shop by material</h2>
+  <h2 class="rt-hp-h2">Shop by <span class="rt-hp-script">material</span></h2>
   <a class="rt-hp-material" href="/rocktawa-site/collections/cast-iron">
     <img src="/rocktawa-site/_assets/rocktawa.com/cdn/shop/files/Home_slide-1.jpg" alt="Rock Tawa cast-iron dosa tawa, grill pan and Dutch oven" loading="lazy">
     <span><b>Cast iron</b><i>All 23 products: tawas, kadhais, pans, grill pans, Dutch ovens and paniyarakkal</i><em>Shop cast iron &rarr;</em></span>
@@ -2368,7 +2379,7 @@ first.parentNode.insertBefore(script, first);
   <h3 class="rt-hp-h3">Or by occasion</h3>
   <div class="rt-hp-chips"><a href="/rocktawa-site/collections/new-home">New home</a><a href="/rocktawa-site/collections/weddings">Weddings</a><a href="/rocktawa-site/collections/diwali">Diwali</a><a href="/rocktawa-site/pages/build-a-set">Build your own set</a></div>
 </div></section><section class="rt-hp-why"><div class="container">
-  <h2 class="rt-hp-h2">Why cast iron</h2>
+  <h2 class="rt-hp-h2">Why <span class="rt-hp-script">cast iron</span></h2>
   <div class="rt-hp-why-grid">
     <div><span>1</span><h3>No chemical coating</h3><p>Just cast iron, pre-seasoned with sunflower oil. Nothing synthetic between the pan and your food.</p></div>
     <div><span>2</span><h3>Non-stick that grows</h3><p>The seasoning builds up as you cook. The first few dosas may stick; after that, less and less oil.</p></div>
@@ -2862,7 +2873,7 @@ first.parentNode.insertBefore(script, first);
     </div>
 
 </div><style> #shopify-section-template--15925341749292__16328142266b504c78 .product-block.section-block-template--15925341749292__16328142266b504c78 {margin-top: 5%;} </style></div><section class="rt-hp-reviews"><div class="container">
-  <h2 class="rt-hp-h2">What buyers say</h2>
+  <h2 class="rt-hp-h2">What buyers <span class="rt-hp-script">say</span></h2>
   <p class="rt-hp-note">Amazon's top review for each of our four most-rated products, copied word for word. More, including the low ratings, on each product page.</p>
   <div class="rt-hp-rev-grid"><article class="rt-hp-rev"><span class="rt-star">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="rt-star-off"></span></span><h3>Fantastic product. But of course know and respect you are getting cast iron tawa</h3><p class="rt-hp-rev-body">Its an amazing product. Before you choose a cast iron tawa, there are many options available so make sure the tawa surface is not polished/machined. If it is machined it will not work properly for many many times. I experienced this long back with my old no-brand tawa. So I chose this tawa since its surface is coarse almost like sand blasted, which is ideal for dosa. 2nd choose the handle mould is thick. Dont buy tawas with thin handle mould. It can easily break. So again another reason why I chose this vs others. See case iron is brittle almost like ceramic. So handle and maintain with care. Of course it is iron, iron will rust immediately. It should be immediate if you live in coastal regions such as Chennai/Mumbai etc. So make sure you oil it front, back, handles and keep a tiny coat of oil always. Of course you have to first season before use. (refer many youtube videos). But even after seasoning first 3-5 dosas, keep putting and disposing. Since they do not come initially well. But eventually you should see it works amazing. It is what you are paying for. It is a quality of cast iron. Respect its a direct quality of &quot;Shani&quot; (astrology) as Iron is his element. So lot of delays eventually you get its fruits. Maintenance: Once you are done with initial use. Just wash the warm tawa with running tap water and once cold put it inside a plastic/paper bag and store it safe. DO NOT SOAP WASH frequently, else you have to start once again seasoning, disposing few dosas. So if you are buying any brand cast iron, you just first think and commit yourself. Its not like non-stick tawa, where it works fantastic for first 1 year, later it never works. Its a Rahu&#x27;s energy(astrology). Its fake, pretends to be working eventually its just for short-term. Once when you buy always check for any defects and cracks. If you find any issues return/replace. Hope this helps your buying decision :)</p><p class="rt-hp-rev-by">Sathya K. &middot; Verified purchase on Amazon.in</p><a href="/rocktawa-site/products/rock-tawa-dosa-tawa-12-inch-pre-seasoned-cast-iron-skillet-with-silicon-grip">Dosa tawa with silicone grip, 12 inch &middot; 4.0&#9733; from 14,454 ratings &rarr;</a></article><article class="rt-hp-rev"><span class="rt-star">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="rt-star-off"></span></span><h3>Good product</h3><p class="rt-hp-rev-body">Good cast iron kadhai.</p><p class="rt-hp-rev-by">Shop2Earn &middot; Verified purchase on Amazon.in</p><a href="/rocktawa-site/products/rock-tawa-7-5-inch-kadhai-pre-seasoned-cast-iron-kadhai">Kadhai, 7.5 inch, 1.5 litres &middot; 4.2&#9733; from 1,723 ratings &rarr;</a></article><article class="rt-hp-rev"><span class="rt-star">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="rt-star-off"></span></span><h3>HEAVY, STURDY ,PRE- SEASONED .....</h3><p class="rt-hp-rev-body">Nowadays cast iron cookware are trending the most... Main reason being they r almost non stick like the non stick cookware ,which are very harmful for our health... So the Rock Tawa kadai has served to its name...its very solid and sturdy....very heavy which tells us how thick the metal is.....The pre- seasoning was almost good but as everyone says...i washed it prior to use and seasoned it using the regular method.....and the first cooking in it experience was awesome....The brand is budget friendly also....Cleaning cast iron cookware is do easy... Only care is to handle it carefully and cool it before u wash ... Its a must buy product from Rock Tawa..</p><p class="rt-hp-rev-by">Vani B. &middot; Verified purchase on Amazon.in</p><a href="/rocktawa-site/products/rock-tawa-9-inch-kadhai-1-5-litres-pre-seasoned-cast-iron-kadhai">Kadhai, 9 inch, 2 litres &middot; 4.2&#9733; from 1,476 ratings &rarr;</a></article><article class="rt-hp-rev"><span class="rt-star">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="rt-star-off"></span></span><h3>Value for money</h3><p class="rt-hp-rev-body">Just loved the cast iron tawa..no sticking..just followed the instructions and it is good to go..appam comes out so well..very happy with the product..but I feel it is over priced..</p><p class="rt-hp-rev-by">Sumathi &middot; Verified purchase on Amazon.in</p><a href="/rocktawa-site/products/rock-tawa-appam-tawa-pre-seasoned-cast-iron-skillet">Appam tawa &middot; 4.2&#9733; from 198 ratings &rarr;</a></article></div>
 </div></section><div id="shopify-section-template--15925341749292__1632364695b0f88b4f" class="shopify-section sections-instagram-block"><link rel="stylesheet" href="/rocktawa-site/_assets/rocktawa.com/cdn/shop/t/4/assets/component-instagram.css" media="print" onload="this.media='all'">
@@ -3778,7 +3789,7 @@ first.parentNode.insertBefore(script, first);
                         <div class="price  price--on-sale ">
     <dl><div class="price__regular"><dd class="price__last"><span class="price-item price-item--regular">From Rs. 749.00</span></dd>
         </div>
-        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 2,050.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
+        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 1,800.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
         <small class="unit-price caption hidden">
             <dt class="visually-hidden">Unit price</dt>
             <dd class="price__last"><span></span><span aria-hidden="true">/</span><span class="visually-hidden">&nbsp;per&nbsp;</span><span></span></dd>
@@ -4048,7 +4059,7 @@ first.parentNode.insertBefore(script, first);
                         <div class="price  price--on-sale ">
     <dl><div class="price__regular"><dd class="price__last"><span class="price-item price-item--regular">From Rs. 749.00</span></dd>
         </div>
-        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 2,050.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
+        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 1,800.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
         <small class="unit-price caption hidden">
             <dt class="visually-hidden">Unit price</dt>
             <dd class="price__last"><span></span><span aria-hidden="true">/</span><span class="visually-hidden">&nbsp;per&nbsp;</span><span></span></dd>

@@ -874,13 +874,9 @@ first.parentNode.insertBefore(script, first);
 
 <style id="clone-shop-by-menu">.rt-shopby-menu .site-nav-link .text { text-transform: none !important; }@media (max-width: 1024px) { .rt-shopby-menu .site-nav-title .text { text-transform: none !important; } }</style>
 <style id="clone-no-fake-sale">
-  .price__compare, .money-compare-price, .compare-price, s.price-item--regular,
   .sale-badge, .badge.sale-badge, .productView-badge .sale-badge,
   [id*="__announcement-bar"],
-  .productView-soldProduct, .productView-ViewingProduct,
   .productView-moreItem.moreItem-productText { display: none !important; }   /* the red HAPPY10 bar under Buy it now */
-  .price--on-sale .price-item--sale, .price-item--sale, .sticky-price .money-sale-price
-    { color: inherit !important; }
 </style>
 <style id="clone-product-names">
   :root { --product-title-text-transform: none !important; }
@@ -894,6 +890,10 @@ first.parentNode.insertBefore(script, first);
   .rt-sizes a.product-form__label.is-active .text { color: var(--variant-color-active); background-color: var(--variant-bg-active); border-color: var(--swatch-border-active); }
   .rt-card-sizes { font-size: 13px; color: #6b6b6b; margin: 2px 0 4px; }
   a.rt-choose-size { display: block; text-align: center; text-decoration: none; }
+</style>
+<style id="clone-sharp-corners">
+  [class^="rt-"], [class*=" rt-"], [class^="rt-"] *, [class*=" rt-"] * { border-radius: 0 !important; }
+  .rt-hp-hero-img::before { border-radius: 50% !important; }
 </style>
 <style id="clone-tidy">
   .wa-chat-bubble { display: none !important; }
@@ -1220,7 +1220,7 @@ first.parentNode.insertBefore(script, first);
                         <div class="price  price--on-sale ">
     <dl><div class="price__regular"><dd class="price__last"><span class="price-item price-item--regular">From Rs. 749.00</span></dd>
         </div>
-        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 2,050.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
+        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 1,800.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
         <small class="unit-price caption hidden">
             <dt class="visually-hidden">Unit price</dt>
             <dd class="price__last"><span></span><span aria-hidden="true">/</span><span class="visually-hidden">&nbsp;per&nbsp;</span><span></span></dd>
@@ -1491,7 +1491,7 @@ first.parentNode.insertBefore(script, first);
                         <div class="price  price--on-sale ">
     <dl><div class="price__regular"><dd class="price__last"><span class="price-item price-item--regular">From Rs. 749.00</span></dd>
         </div>
-        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 2,050.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
+        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 1,800.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
         <small class="unit-price caption hidden">
             <dt class="visually-hidden">Unit price</dt>
             <dd class="price__last"><span></span><span aria-hidden="true">/</span><span class="visually-hidden">&nbsp;per&nbsp;</span><span></span></dd>
@@ -1852,7 +1852,7 @@ first.parentNode.insertBefore(script, first);
 
 
 
-<li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a  href="/rocktawa-site/pages/track-order" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Track your order</span></a></li><li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a href="/rocktawa-site/pages/size-guide" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Size guide</span></a></li><li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a href="/rocktawa-site/pages/which-tawa" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Which tawa?</span></a></li><li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a href="/rocktawa-site/pages/care-assistant" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Care help</span></a></li><li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a href="/rocktawa-site/pages/build-a-set" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Build a set</span></a></li>
+<li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a  href="https://rocktawa.com/apps/track123" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Track your order</span></a></li><li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a href="/rocktawa-site/pages/size-guide" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Size guide</span></a></li><li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a href="/rocktawa-site/pages/which-tawa" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Which tawa?</span></a></li><li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a href="/rocktawa-site/pages/care-assistant" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Care help</span></a></li><li class="menu-lv-item menu-lv-1 text-left no-megamenu"><a href="/rocktawa-site/pages/build-a-set" class="menu-lv-1__action header__menu-item header__menu-item list-menu__item link link--text focus-inset link-effect"><span class="text p-relative">Build a set</span></a></li>
 </ul>
 
                             </nav></div>
@@ -2022,7 +2022,7 @@ first.parentNode.insertBefore(script, first);
                         <div class="price  price--on-sale ">
     <dl><div class="price__regular"><dd class="price__last"><span class="price-item price-item--regular">From Rs. 749.00</span></dd>
         </div>
-        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 2,050.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
+        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 1,800.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
         <small class="unit-price caption hidden">
             <dt class="visually-hidden">Unit price</dt>
             <dd class="price__last"><span></span><span aria-hidden="true">/</span><span class="visually-hidden">&nbsp;per&nbsp;</span><span></span></dd>
@@ -2435,7 +2435,7 @@ first.parentNode.insertBefore(script, first);
                                     <span class="text">CAST IRON</span>
                                 </a>
                             </li><li class="navPages-item" role="menuitem">
-                                <a class="navPages-action link link-underline" href="/rocktawa-site/pages/track-order" aria-label="link">
+                                <a class="navPages-action link link-underline" href="https://rocktawa.com/apps/track123" aria-label="link">
                                     <span class="text">Track your order</span>
                                 </a>
                             </li></ul>
@@ -2746,7 +2746,7 @@ first.parentNode.insertBefore(script, first);
                         <div class="price  price--on-sale ">
     <dl><div class="price__regular"><dd class="price__last"><span class="price-item price-item--regular">From Rs. 749.00</span></dd>
         </div>
-        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 2,050.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
+        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 1,800.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
         <small class="unit-price caption hidden">
             <dt class="visually-hidden">Unit price</dt>
             <dd class="price__last"><span></span><span aria-hidden="true">/</span><span class="visually-hidden">&nbsp;per&nbsp;</span><span></span></dd>
@@ -5145,7 +5145,7 @@ first.parentNode.insertBefore(script, first);
                         <div class="price  price--on-sale ">
     <dl><div class="price__regular"><dd class="price__last"><span class="price-item price-item--regular">From Rs. 749.00</span></dd>
         </div>
-        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 2,050.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
+        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 1,800.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
         <small class="unit-price caption hidden">
             <dt class="visually-hidden">Unit price</dt>
             <dd class="price__last"><span></span><span aria-hidden="true">/</span><span class="visually-hidden">&nbsp;per&nbsp;</span><span></span></dd>
@@ -5415,7 +5415,7 @@ first.parentNode.insertBefore(script, first);
                         <div class="price  price--on-sale ">
     <dl><div class="price__regular"><dd class="price__last"><span class="price-item price-item--regular">From Rs. 749.00</span></dd>
         </div>
-        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 2,050.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
+        <div class="price__sale"><dd class="price__compare"><s class="price-item price-item--regular">Rs. 1,800.00</s></dd><dd class="price__last"><span class="price-item price-item--sale">From Rs. 749.00</span></dd></div>
         <small class="unit-price caption hidden">
             <dt class="visually-hidden">Unit price</dt>
             <dd class="price__last"><span></span><span aria-hidden="true">/</span><span class="visually-hidden">&nbsp;per&nbsp;</span><span></span></dd>
